@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+/* === Design System (PRD Section 9.3) === */
+:root {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --color-primary: #3b82f6;
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-error: #ef4444;
+  --color-status-2xx: #22c55e;
+  --color-status-3xx: #3b82f6;
+  --color-status-4xx: #eab308;
+  --color-status-5xx: #ef4444;
+}
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --color-method-get: #3b82f6;
+  --color-method-post: #22c55e;
+  --color-method-put: #f97316;
+  --color-method-patch: #a855f7;
+  --color-method-delete: #ef4444;
+  --color-method-head: #6b7280;
+  --color-method-options: #06b6d4;
+}
+
+/* === Scrollbar Styling === */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #a1a1aa;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #52525b;
+}
+
+/* === Base === */
+body {
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+
+/* === Method Badge Colors === */
+.method-badge {
+  @apply inline-flex items-center justify-center rounded px-1.5 py-0.5 text-xs font-bold leading-none text-white min-w-[60px];
+}
+.method-get { background-color: var(--color-method-get); }
+.method-post { background-color: var(--color-method-post); }
+.method-put { background-color: var(--color-method-put); }
+.method-patch { background-color: var(--color-method-patch); }
+.method-delete { background-color: var(--color-method-delete); }
+.method-head { background-color: var(--color-method-head); }
+.method-options { background-color: var(--color-method-options); }
+
+/* === Status Badge Colors === */
+.status-2xx { color: var(--color-status-2xx); }
+.status-3xx { color: var(--color-status-3xx); }
+.status-4xx { color: var(--color-status-4xx); }
+.status-5xx { color: var(--color-status-5xx); }
+
+/* === Animations === */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
